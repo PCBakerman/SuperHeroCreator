@@ -8,7 +8,7 @@ namespace Superhero_Creator.Models
 {
     //this model will represent a table in your database and the properties represent the columns of that table in the database.
     
-    public class SuperHeroEntry
+    public class SuperHero
     {   [Key]
         public int ID { get; set; }
         public string SuperName { get; set; }

@@ -10,7 +10,7 @@ namespace Superhero_Creator.Data
     public class ApplicationDbContext : IdentityDbContext
     {
         // add a property of type DbSet<>
-        public DbSet<SuperHeroEntry> SuperHeroEntries { get; set; }
+        public DbSet<SuperHero> SuperHeroEntries { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
