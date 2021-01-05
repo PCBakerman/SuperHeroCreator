@@ -17,15 +17,15 @@ namespace Superhero_Creator.Controllers
             _context = context;
         }
         // GET: SuperHeroController
-        public ActionResult Index()
+        public ActionResult Index(SuperHero superHero)
         {
-            return View();
+            return View(superHero);
         }
 
         // GET: SuperHeroController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(SuperHero superHero)
         {
-            return View();
+            return View(superHero);
         }
 
         // GET: SuperHeroController/Create
@@ -47,7 +47,7 @@ namespace Superhero_Creator.Controllers
             }
             catch
             {
-                return View();
+                return View(superHero);
             }
         }
 
