@@ -18,9 +18,9 @@ namespace Superhero_Creator.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(SuperHero superHero)
         {
-            return View();
+            return View(superHero);
         }
 
         public IActionResult Privacy()

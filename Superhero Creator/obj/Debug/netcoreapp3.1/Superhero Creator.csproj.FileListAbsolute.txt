@@ -166,3 +166,4 @@ C:\Users\Patrick\Desktop\Coding Class Contents\Superhero Creator\Superhero Creat
 C:\Users\Patrick\Desktop\Coding Class Contents\Superhero Creator\Superhero Creator\obj\Debug\netcoreapp3.1\Superhero Creator.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Patrick\Desktop\Coding Class Contents\Superhero Creator\Superhero Creator\obj\Debug\netcoreapp3.1\Razor\Views\SuperHero\Create.cshtml.g.cs
 C:\Users\Patrick\Desktop\Coding Class Contents\Superhero Creator\Superhero Creator\obj\Debug\netcoreapp3.1\Razor\Views\SuperHero\Details.cshtml.g.cs
+C:\Users\Patrick\Desktop\Coding Class Contents\Superhero Creator\Superhero Creator\obj\Debug\netcoreapp3.1\Razor\Views\SuperHero\Edit.cshtml.g.cs

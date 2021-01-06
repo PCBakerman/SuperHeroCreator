@@ -23,15 +23,15 @@ namespace Superhero_Creator.Controllers
         }
 
         // GET: SuperHeroController/Details/5
-        public ActionResult Details(SuperHero superHero)
+        public ActionResult Details()
         {
-            return View(superHero);
+            return View("Details");
         }
 
         // GET: SuperHeroController/Create
         public ActionResult Create()
         {
-            return View();
+            return View("Create");
         }
 
         // POST: SuperHeroController/Create
@@ -47,7 +47,7 @@ namespace Superhero_Creator.Controllers
             }
             catch
             {
-                return View(superHero);
+                return View("Create");
             }
         }
 

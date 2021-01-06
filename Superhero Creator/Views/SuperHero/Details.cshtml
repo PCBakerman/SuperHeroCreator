@@ -1,11 +1,11 @@
 ﻿@model Superhero_Creator.Models.SuperHero
 
 @{
-    ViewData["Title"] = "Let's Meet Our Hero's";
+    ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
+<h1>Let's Meet Our Hero's!</h1>
+<h2>@ViewData["Details"]</h2>
 <div>
     <h4>SuperHero</h4>
     <hr />
@@ -43,6 +43,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@ViewData["Edit"]">Edit</a> |
+    <a asp-action="Index" asp-route-id="@ViewData["Index"]">Back to List</a>
 </div>
