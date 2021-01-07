@@ -15,17 +15,20 @@ namespace Superhero_Creator.Controllers
         public SuperHeroController(ApplicationDbContext context)
         {
             _context = context;
+           
         }
         // GET: SuperHeroController
-        public ActionResult Index(SuperHero superHero)
+        public ActionResult Index()
         {
-            return View(superHero);
+            var Superheros = _context.SuperHeroEntries.ToList();
+            return View("Index", Superheros);
         }
 
         // GET: SuperHeroController/Details/5
-        public ActionResult Details()
+        public ActionResult Details(int id)
         {
-            return View("Details");
+            var model = _context.SuperHeroEntries.FirstOrDefault(x => x.ID == id);
+            return View("Details", model);
         }
 
         // GET: SuperHeroController/Create
@@ -43,25 +46,28 @@ namespace Superhero_Creator.Controllers
             {   //TODO: Add insert logic here
                 _context.SuperHeroEntries.Add(superHero);
                 _context.SaveChanges();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Details));
             }
             catch
             {
-                return View("Create");
+                return View("Create", superHero);
             }
         }
 
         // GET: SuperHeroController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var model = _context.SuperHeroEntries.FirstOrDefault(x => x.ID == id);
+            return View("Edit", model);
         }
 
         // POST: SuperHeroController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        //Pull Superhero form database with ID, Update the super with collection (dictionary), save changes.
         public ActionResult Edit(int id, IFormCollection collection)
         {
+            var name = collection["SuperName"];
             try
             {
                 return RedirectToAction(nameof(Index));

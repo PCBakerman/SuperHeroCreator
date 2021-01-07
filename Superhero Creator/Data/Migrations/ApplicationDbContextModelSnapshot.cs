@@ -219,7 +219,7 @@ namespace Superhero_Creator.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Superhero_Creator.Models.SuperHeroEntry", b =>
+            modelBuilder.Entity("Superhero_Creator.Models.SuperHero", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
