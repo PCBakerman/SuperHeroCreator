@@ -20,20 +20,21 @@ namespace Superhero_Creator.Controllers
         // GET: SuperHeroController
         public ActionResult Index()
         {
-            var Superheros = _context.SuperHeroEntries.ToList();
-            return View("Index", Superheros);
+            var superheros = _context.SuperHeroEntries.ToList();
+            return View("Index", superheros);
         }
 
         // GET: SuperHeroController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details()
         {
-            var model = _context.SuperHeroEntries.FirstOrDefault(x => x.ID == id);
-            return View("Details", model);
+            
+            return View("Details");
         }
 
         // GET: SuperHeroController/Create
         public ActionResult Create()
         {
+            
             return View("Create");
         }
 
@@ -50,7 +51,7 @@ namespace Superhero_Creator.Controllers
             }
             catch
             {
-                return View("Create", superHero);
+                return View("Index", superHero);
             }
         }
 
@@ -58,44 +59,53 @@ namespace Superhero_Creator.Controllers
         public ActionResult Edit(int id)
         {
             var model = _context.SuperHeroEntries.FirstOrDefault(x => x.ID == id);
+
             return View("Edit", model);
         }
 
         // POST: SuperHeroController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        //Pull Superhero form database with ID, Update the super with collection (dictionary), save changes.
-        public ActionResult Edit(int id, IFormCollection collection)
+        //Pull Superhero from database with ID, Update the super with collection (dictionary), save changes.
+        public async Task<ActionResult> EditAsync(int id, SuperHero superHero)
         {
-            var name = collection["SuperName"];
+            
             try
             {
+                _context.Update(superHero);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                return View("Edit", superHero);
             }
         }
 
         // GET: SuperHeroController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
-        }
 
+            var model = _context.SuperHeroEntries.FirstOrDefault(x => x.ID == id);
+            
+            return View("Delete", model);
+        }
+            
         // POST: SuperHeroController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<ActionResult> DeleteAsync(int id, SuperHero superHero)
         {
+            
             try
             {
+                _context.Remove(superHero);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
+            }                                            
             catch
             {
-                return View();
+                return View("Delete", superHero);
             }
         }
     }

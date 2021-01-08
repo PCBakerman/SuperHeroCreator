@@ -206,3 +206,4 @@ C:\Users\Patrick\Desktop\Coding Class Contents\Superhero Creator\Superhero Creat
 C:\Users\Patrick\Desktop\Coding Class Contents\Superhero Creator\Superhero Creator\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Patrick\Desktop\Coding Class Contents\Superhero Creator\Superhero Creator\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\Patrick\Desktop\Coding Class Contents\Superhero Creator\Superhero Creator\obj\Debug\netcoreapp3.1\Razor\Views\SuperHero\Index.cshtml.g.cs
+C:\Users\Patrick\Desktop\Coding Class Contents\Superhero Creator\Superhero Creator\obj\Debug\netcoreapp3.1\Razor\Views\SuperHero\Delete.cshtml.g.cs
